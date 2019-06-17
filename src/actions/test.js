@@ -1,9 +1,11 @@
-export function helloWorld(firstName, lastName) {
+export const ADD_ALBUM = 'ADD_ALBUM'
+
+export function addAlbum(id, title) {
   return {
-    type: 'HELLO_WORLD',
+    type: 'ADD_ALBUM',
     payload: {
-      firstName: firstName,
-      lastName: lastName
+      id,
+      title
     }
   }
 }
