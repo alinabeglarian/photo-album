@@ -8,16 +8,6 @@ export function setAlbums(albums) {
   }
 }
 
-export function addAlbum(id, title) {
-  return {
-    type: 'ADD_ALBUM',
-    payload: {
-      id,
-      title
-    }
-  }
-}
-
 export function getAlbums() {
   return function(dispatch) {
     superagent('https://jsonplaceholder.typicode.com/albums')
@@ -27,4 +17,3 @@ export function getAlbums() {
 }
 
 export const SET_ALBUMS = 'SET_ALBUMS'
-export const ADD_ALBUM = 'ADD_ALBUM'
