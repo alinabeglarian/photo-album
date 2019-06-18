@@ -1,7 +1,6 @@
 import superagent from 'superagent'
 
 export function setAlbums(albums) {
-  console.log('albums:', albums)
   return {
     type: 'SET_ALBUMS',
     payload: albums

@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import PhotoPage from './PhotoPage'
 import { connect } from 'react-redux';
+import { setPhotos, getPhotosByAlbum } from '../actions/photos'
 
 class PhotoPageContainer extends Component {
   componentDidMount() {
     const albumId = this.props.match.params.id 
-    console.log(`Now fetch photos from albumId = ${albumId}`)
+    this.props.getPhotosByAlbum(albumId)
   }
 
   render() {
@@ -14,6 +15,10 @@ class PhotoPageContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => {
+  return {
+    photos: state.photos
+  }
+}
 
-export default connect(mapStateToProps)(PhotoPageContainer)
+export default connect(mapStateToProps, { setPhotos, getPhotosByAlbum })(PhotoPageContainer)
